@@ -31,7 +31,7 @@ const Computers = ({ isMobile }) => {
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [controlsEnabled, setControlsEnabled] = useState(true);
-  const controlsRef = useRef();
+  const touchStart = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 500px)');
@@ -45,22 +45,29 @@ const ComputersCanvas = () => {
     };
   }, []);
 
-
+  // ⬇️ заменяем старый useEffect (scroll listener) на этот — он различает направление свайпа
   useEffect(() => {
-    // 🔹 Отключаем вращение во время прокрутки страницы
-    const handleScrollStart = () => setControlsEnabled(false);
-    const handleScrollEnd = () => setTimeout(() => setControlsEnabled(true), 300);
+    const handleTouchStart = e => {
+      const touch = e.touches[0];
+      touchStart.current = { x: touch.clientX, y: touch.clientY };
+    };
 
-    window.addEventListener('touchmove', handleScrollStart);
-    window.addEventListener('scroll', handleScrollStart);
-    window.addEventListener('touchend', handleScrollEnd);
-    window.addEventListener('scrollend', handleScrollEnd);
+    const handleTouchMove = e => {
+      const touch = e.touches[0];
+      const dx = Math.abs(touch.clientX - touchStart.current.x);
+      const dy = Math.abs(touch.clientY - touchStart.current.y);
+
+      // ⬅️➡️ горизонтальный свайп — вращаем
+      // ⬆️⬇️ вертикальный свайп — скроллим
+      setControlsEnabled(dx > dy);
+    };
+
+    window.addEventListener('touchstart', handleTouchStart);
+    window.addEventListener('touchmove', handleTouchMove);
 
     return () => {
-      window.removeEventListener('touchmove', handleScrollStart);
-      window.removeEventListener('scroll', handleScrollStart);
-      window.removeEventListener('touchend', handleScrollEnd);
-      window.removeEventListener('scrollend', handleScrollEnd);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
     };
   }, []);
 
@@ -73,7 +80,6 @@ const ComputersCanvas = () => {
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
-          ref={controlsRef}
           enabled={controlsEnabled}
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}

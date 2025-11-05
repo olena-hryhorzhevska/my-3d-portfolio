@@ -1,4 +1,4 @@
-import { Suspense, useState, useEffect } from 'react';
+import { Suspense, useState, useEffect, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import CanvasLoader from '../Loader';
@@ -30,6 +30,9 @@ const Computers = ({ isMobile }) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [controlsEnabled, setControlsEnabled] = useState(true);
+  const controlsRef = useRef();
+
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 500px)');
     setIsMobile(mediaQuery.matches);
@@ -42,6 +45,25 @@ const ComputersCanvas = () => {
     };
   }, []);
 
+
+  useEffect(() => {
+    // 🔹 Отключаем вращение во время прокрутки страницы
+    const handleScrollStart = () => setControlsEnabled(false);
+    const handleScrollEnd = () => setTimeout(() => setControlsEnabled(true), 300);
+
+    window.addEventListener('touchmove', handleScrollStart);
+    window.addEventListener('scroll', handleScrollStart);
+    window.addEventListener('touchend', handleScrollEnd);
+    window.addEventListener('scrollend', handleScrollEnd);
+
+    return () => {
+      window.removeEventListener('touchmove', handleScrollStart);
+      window.removeEventListener('scroll', handleScrollStart);
+      window.removeEventListener('touchend', handleScrollEnd);
+      window.removeEventListener('scrollend', handleScrollEnd);
+    };
+  }, []);
+
   return (
     <Canvas
       frameloop="demand"
@@ -50,7 +72,13 @@ const ComputersCanvas = () => {
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
+        <OrbitControls
+          ref={controlsRef}
+          enabled={controlsEnabled}
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
         <Computers isMobile={isMobile} />
       </Suspense>
       <Preload all />

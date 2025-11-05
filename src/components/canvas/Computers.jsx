@@ -55,6 +55,9 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
           touchAction="none"
+          enableDamping={true}
+          dampingFactor={0.05}
+          rotateSpeed={0.8}
         />
         <Computers isMobile={isMobile} />
       </Suspense>

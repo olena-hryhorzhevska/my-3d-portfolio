@@ -28,6 +28,7 @@ import egged from "./company/egged.png";
 import yachtjet from "./yachtjet.jpg";
 import booksy from "./booksy.jpg";
 import notehub from './notehub.jpg';
+import clothica from './clothica.jpg';
 
 export {
   logo,
@@ -53,6 +54,7 @@ export {
   figma,
   egged,
   yachtjet,
+  clothica,
   booksy,
   notehub,
   gmail,

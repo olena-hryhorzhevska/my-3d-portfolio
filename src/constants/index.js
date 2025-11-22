@@ -16,6 +16,7 @@ import {
   figma,
   egged,
   yachtjet,
+  clothica,
   booksy,
   notehub,
   nextjs,
@@ -163,6 +164,43 @@ const testimonials = [
 ];
 
 const projects = [
+  {
+    name: 'Clothica',
+    description:
+      'A modern full-stack e-commerce project built with Next.js and React. Features include dynamic product pages, global state management with Zustand, secure authentication, server-side rendering, API routes, validation with Yup, and a clean responsive UI. Designed as a full real-world online store experience.',
+    tags: [
+      {
+        name: 'Next.js',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'React',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'TypeScript',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Zustand',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Yup',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Swiper',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Axios',
+        color: 'blue-text-gradient',
+      },
+    ],
+    image: clothica,
+    source_code_link: 'https://github.com/olena-hryhorzhevska/yacht-jet-team',
+  },
   {
     name: 'Yacht Rent',
     description:

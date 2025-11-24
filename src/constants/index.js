@@ -199,7 +199,7 @@ const projects = [
       },
     ],
     image: clothica,
-    source_code_link: 'https://github.com/olena-hryhorzhevska/yacht-jet-team',
+    source_code_link: 'https://github.com/olena-hryhorzhevska/clothica-team-goit',
   },
   {
     name: 'Yacht Rent',

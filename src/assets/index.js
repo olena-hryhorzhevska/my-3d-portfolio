@@ -29,6 +29,7 @@ import yachtjet from "./yachtjet.jpg";
 import booksy from "./booksy.jpg";
 import notehub from './notehub.jpg';
 import clothica from './clothica.jpg';
+import nannies from './nannies.jpg';
 
 export {
   logo,
@@ -57,6 +58,7 @@ export {
   clothica,
   booksy,
   notehub,
+  nannies,
   gmail,
   linkedin
 };

@@ -19,6 +19,7 @@ import {
   clothica,
   booksy,
   notehub,
+  nannies,
   nextjs,
 } from '../assets';
 
@@ -164,6 +165,43 @@ const testimonials = [
 ];
 
 const projects = [
+  {
+    name: 'Nanny Services',
+    description:
+      'Nanny Services is a modern full-stack web application that helps families find, filter, and book trusted babysitters. Built with React, JavaScript, Zustand, Vite and Firebase (for backend), the app features secure authentication, advanced filtering, favorites management, appointment booking, and a fully responsive UI designed for real-world use.',
+    tags: [
+      {
+        name: 'React',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'React Router',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'JavaScript',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Zustand',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Yup',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Firebase',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'CSS',
+        color: 'blue-text-gradient',
+      },
+    ],
+    image: nannies,
+    source_code_link: 'https://github.com/olena-hryhorzhevska/nanny-app',
+  },
   {
     name: 'Clothica',
     description:

@@ -20,6 +20,7 @@ import {
   booksy,
   notehub,
   nannies,
+  petlove,
   nextjs,
 } from '../assets';
 
@@ -166,169 +167,209 @@ const testimonials = [
 
 const projects = [
   {
-    name: 'Nanny Services',
+    name: "Petlove",
+    additionalText: 'Coming soon...',
     description:
-      'Nanny Services is a modern full-stack web application that helps families find, filter, and book trusted babysitters. Built with React, JavaScript, Zustand, Vite and Firebase (for backend), the app features secure authentication, advanced filtering, favorites management, appointment booking, and a fully responsive UI designed for real-world use.',
+      "A modern web platform designed to help users find and purchase pets. The application will feature detailed pet listings, advanced search filters to help users find the perfect match, and user accounts for a more personalized experience. The goal of the project is to create a simple, intuitive interface that makes discovering the right pet easy and enjoyable.",
     tags: [
       {
-        name: 'React',
-        color: 'blue-text-gradient',
+        name: "React",
+        color: "blue-text-gradient",
       },
       {
-        name: 'React Router',
-        color: 'blue-text-gradient',
+        name: "React Router",
+        color: "green-text-gradient",
       },
       {
-        name: 'JavaScript',
-        color: 'green-text-gradient',
+        name: "TypeScript",
+        color: "blue-text-gradient",
       },
       {
-        name: 'Zustand',
-        color: 'blue-text-gradient',
+        name: "Zustand",
+        color: "green-text-gradient",
       },
       {
-        name: 'Yup',
-        color: 'green-text-gradient',
+        name: "Yup",
+        color: "blue-text-gradient",
       },
       {
-        name: 'Firebase',
-        color: 'blue-text-gradient',
+        name: "CSS",
+        color: "green-text-gradient",
       },
       {
-        name: 'CSS',
-        color: 'blue-text-gradient',
+        name: "HTML",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: petlove,
+    source_code_link: "https://github.com/olena-hryhorzhevska/petlove",
+  },
+
+  {
+    name: "Nanny Services",
+    description:
+      "Nanny Services is a modern full-stack web application that helps families find, filter, and book trusted babysitters. Built with React, JavaScript, Zustand, Vite and Firebase (for backend), the app features secure authentication, advanced filtering, favorites management, appointment booking, and a fully responsive UI designed for real-world use.",
+    tags: [
+      {
+        name: "React",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "React Router",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "JavaScript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Zustand",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Yup",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Firebase",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "CSS",
+        color: "blue-text-gradient",
       },
     ],
     image: nannies,
-    source_code_link: 'https://github.com/olena-hryhorzhevska/nanny-app',
+    source_code_link: "https://github.com/olena-hryhorzhevska/nanny-app",
   },
   {
-    name: 'Clothica',
+    name: "Clothica",
     description:
-      'A modern full-stack e-commerce project built with Next.js and React. Features include dynamic product pages, global state management with Zustand, secure authentication, server-side rendering, API routes, validation with Yup, and a clean responsive UI. Designed as a full real-world online store experience.',
+      "A modern full-stack e-commerce project built with Next.js and React. Features include dynamic product pages, global state management with Zustand, secure authentication, server-side rendering, API routes, validation with Yup, and a clean responsive UI. Designed as a full real-world online store experience.",
     tags: [
       {
-        name: 'Next.js',
-        color: 'blue-text-gradient',
+        name: "Next.js",
+        color: "blue-text-gradient",
       },
       {
-        name: 'React',
-        color: 'green-text-gradient',
+        name: "React",
+        color: "green-text-gradient",
       },
       {
-        name: 'TypeScript',
-        color: 'pink-text-gradient',
+        name: "TypeScript",
+        color: "pink-text-gradient",
       },
       {
-        name: 'Zustand',
-        color: 'blue-text-gradient',
+        name: "Zustand",
+        color: "blue-text-gradient",
       },
       {
-        name: 'Yup',
-        color: 'green-text-gradient',
+        name: "Yup",
+        color: "green-text-gradient",
       },
       {
-        name: 'Swiper',
-        color: 'pink-text-gradient',
+        name: "Swiper",
+        color: "pink-text-gradient",
       },
       {
-        name: 'Axios',
-        color: 'blue-text-gradient',
+        name: "Axios",
+        color: "blue-text-gradient",
       },
     ],
     image: clothica,
-    source_code_link: 'https://github.com/olena-hryhorzhevska/clothica-team-goit',
+    source_code_link:
+      "https://github.com/olena-hryhorzhevska/clothica-team-goit",
   },
   {
-    name: 'Yacht Rent',
+    name: "Yacht Rent",
     description:
-      'A sleek, responsive yacht rental website with elegant visuals, smooth interactions, and an easy-to-use booking form. Each yacht is showcased with refined design, clear details, and stunning imagery.',
+      "A sleek, responsive yacht rental website with elegant visuals, smooth interactions, and an easy-to-use booking form. Each yacht is showcased with refined design, clear details, and stunning imagery.",
     tags: [
       {
-        name: 'Vite',
-        color: 'blue-text-gradient',
+        name: "Vite",
+        color: "blue-text-gradient",
       },
       {
-        name: 'HTML',
-        color: 'green-text-gradient',
+        name: "HTML",
+        color: "green-text-gradient",
       },
       {
-        name: 'CSS',
-        color: 'pink-text-gradient',
+        name: "CSS",
+        color: "pink-text-gradient",
       },
       {
-        name: 'JavaScript',
-        color: 'blue-text-gradient',
+        name: "JavaScript",
+        color: "blue-text-gradient",
       },
     ],
     image: yachtjet,
-    source_code_link: 'https://github.com/olena-hryhorzhevska/yacht-jet-team',
+    source_code_link: "https://github.com/olena-hryhorzhevska/yacht-jet-team",
   },
   {
-    name: 'Book Store',
+    name: "Book Store",
     description:
-      'Booksy is a modern online bookstore with dynamic features and a clean, user-friendly design. Books are fetched from the server, allowing users to browse by category, view details, and explore curated collections. Smooth pagination, custom dropdowns, and interactive modals make discovering books fast and enjoyable.',
+      "Booksy is a modern online bookstore with dynamic features and a clean, user-friendly design. Books are fetched from the server, allowing users to browse by category, view details, and explore curated collections. Smooth pagination, custom dropdowns, and interactive modals make discovering books fast and enjoyable.",
     tags: [
       {
-        name: 'Vite',
-        color: 'blue-text-gradient',
+        name: "Vite",
+        color: "blue-text-gradient",
       },
       {
-        name: 'RestApi',
-        color: 'green-text-gradient',
+        name: "RestApi",
+        color: "green-text-gradient",
       },
       {
-        name: 'HTML',
-        color: 'pink-text-gradient',
+        name: "HTML",
+        color: "pink-text-gradient",
       },
       {
-        name: 'CSS',
-        color: 'blue-text-gradient',
+        name: "CSS",
+        color: "blue-text-gradient",
       },
       {
-        name: 'JavaScript',
-        color: 'green-text-gradient',
+        name: "JavaScript",
+        color: "green-text-gradient",
       },
     ],
     image: booksy,
-    source_code_link: 'https://github.com/olena-hryhorzhevska/web-booksy',
+    source_code_link: "https://github.com/olena-hryhorzhevska/web-booksy",
   },
   {
-    name: 'Notes Maker',
+    name: "Notes Maker",
     description:
-      'A clean and intuitive notes app designed to make organizing thoughts effortless. It helps users create, view, and manage notes seamlessly — with secure login and sign-up features for personalized access.',
+      "A clean and intuitive notes app designed to make organizing thoughts effortless. It helps users create, view, and manage notes seamlessly — with secure login and sign-up features for personalized access.",
     tags: [
       {
-        name: 'React',
-        color: 'blue-text-gradient',
+        name: "React",
+        color: "blue-text-gradient",
       },
       {
-        name: 'NextJS',
-        color: 'green-text-gradient',
+        name: "NextJS",
+        color: "green-text-gradient",
       },
       {
-        name: 'TypeScript',
-        color: 'blue-text-gradient',
+        name: "TypeScript",
+        color: "blue-text-gradient",
       },
       {
-        name: 'RestApi',
-        color: 'pink-text-gradient',
+        name: "RestApi",
+        color: "pink-text-gradient",
       },
       {
-        name: 'Turbopack',
-        color: 'blue-text-gradient',
+        name: "Turbopack",
+        color: "blue-text-gradient",
       },
       {
-        name: 'HTML',
-        color: 'green-text-gradient',
+        name: "HTML",
+        color: "green-text-gradient",
       },
       {
-        name: 'CSS',
-        color: 'pink-text-gradient',
+        name: "CSS",
+        color: "pink-text-gradient",
       },
     ],
     image: notehub,
-    source_code_link: 'https://github.com/olena-hryhorzhevska/09-auth',
+    source_code_link: "https://github.com/olena-hryhorzhevska/09-auth",
   },
 ];
 

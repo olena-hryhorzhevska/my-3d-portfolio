@@ -9,11 +9,19 @@ import { SectionWrapper } from '../hoc';
 import { projects } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 
-const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
+const ProjectCard = ({
+  index,
+  name,
+  description,
+  tags,
+  image,
+  source_code_link,
+  additionalText = '',
+}) => {
   const [expanded, setExpanded] = React.useState(false);
 
   return (
-    <motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.75)}>
+    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
         options={{
           max: 45,
@@ -23,11 +31,15 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full min-h-[500px]"
       >
         <div className="relative w-full h-[230px]">
-          <img src={image} alt="project_image" className="w-full h-full object-cover rounded-2xl" />
+          <img
+            src={image}
+            alt="project_image"
+            className="w-full h-full object-cover rounded-2xl"
+          />
 
           <div className="absolute inset-0 flex justify-end m-3">
             <div
-              onClick={() => window.open(source_code_link, '_blank')}
+              onClick={() => window.open(source_code_link, "_blank")}
               className="relative overflow-hidden group black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
             >
               <div className="absolute inset-0 bg-gray-500 opacity-0 group-hover:opacity-45 transition-opacity duration-300 rounded-full" />
@@ -41,10 +53,13 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
         </div>
 
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
+          <div className='flex items-center justify-between'>
+            <h3 className="text-white font-bold text-[24px]">{name}</h3>
+            <h5>{additionalText}</h5>
+          </div>
           <p
             className={`mt-2 text-secondary text-[14px] transition-all duration-300 ${
-              expanded ? 'line-clamp-none' : 'line-clamp-3'
+              expanded ? "line-clamp-none" : "line-clamp-3"
             }`}
           >
             {description}
@@ -54,13 +69,17 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
             onClick={() => setExpanded(!expanded)} // → добавлен обработчик клика
             className="mt-2 text-sm text-blue-400 hover:underline focus:outline-none" // → добавлен стиль для кнопки
           >
-            {expanded ? 'Show less' : 'Show more'} {/* → текст кнопки в зависимости от состояния */}
+            {expanded ? "Show less" : "Show more"}{" "}
+            {/* → текст кнопки в зависимости от состояния */}
           </button>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map(tag => (
-            <p key={`${name}-${tag.name}`} className={`text-[14px] ${tag.color}`}>
+          {tags.map((tag) => (
+            <p
+              key={`${name}-${tag.name}`}
+              className={`text-[14px] ${tag.color}`}
+            >
               #{tag.name}
             </p>
           ))}

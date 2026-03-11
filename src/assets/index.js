@@ -30,6 +30,7 @@ import booksy from "./booksy.jpg";
 import notehub from './notehub.jpg';
 import clothica from './clothica.jpg';
 import nannies from './nannies.jpg';
+import petlove from './petlove.jpg';
 
 export {
   logo,
@@ -59,6 +60,7 @@ export {
   booksy,
   notehub,
   nannies,
+  petlove,
   gmail,
   linkedin
 };

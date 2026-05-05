@@ -115,7 +115,7 @@ const experiences = [
     company_name: 'Egged Transportation Ltd',
     icon: egged,
     iconBg: '#383E56',
-    date: '2024 – Present',
+    date: '2023 – Present',
     points: [
       'Worked on website features using React, TypeScript, HTML, and CSS.',
       'Helped make pages responsive and mobile-friendly.',

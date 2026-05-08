@@ -6,6 +6,7 @@ import { fadeIn, textVariant } from '../utils/motion';
 import { SectionWrapper } from '../hoc';
 
 const About = () => {
+  
   return (
     <>
       <motion.div variants={textVariant()}>
